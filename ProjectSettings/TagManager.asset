@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Pickup
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -42,12 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Sky
-    uniqueID: 522068903
+  - name: Background
+    uniqueID: 2198484045
+    locked: 0
+  - name: Enemy
+    uniqueID: 967148021
     locked: 0
   - name: Ground
-    uniqueID: 1241523799
+    uniqueID: 2902764627
+    locked: 0
+  - name: Pickups
+    uniqueID: 490826499
     locked: 0
   - name: Player
-    uniqueID: 3050911509
+    uniqueID: 1249288619
     locked: 0
