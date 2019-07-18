@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8196420167029228851}
   - component: {fileID: 8196420167029228849}
   - component: {fileID: 8196420167029228850}
+  - component: {fileID: -2455871119530895642}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Enemy
@@ -127,3 +128,22 @@ PolygonCollider2D:
       - {x: 0.155, y: -0.295}
       - {x: 0.125, y: -0.155}
       - {x: 0.285, y: -0.13499999}
+--- !u!95 &-2455871119530895642
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196420167029228852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f62d0fee0e285e14397cf9d0ce836434, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

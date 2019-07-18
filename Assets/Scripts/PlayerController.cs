@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+private Animator anim;
 public GameObject camera;
 private Rigidbody2D rb2d;
 
@@ -31,8 +32,11 @@ private int score;
 private int lives;
 public float jumpForce;
 
+private bool facingRight = true;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         pickupSource.clip = pickupSound;
         enemySource.clip = enemySound;
         bgSource.clip = bgMusic;
@@ -65,6 +69,23 @@ public float jumpForce;
             overText.text = "Game Over";
         }
 
+        if (Input.GetKeyDown("right")) {
+            anim.SetInteger("State", 1);
+        }
+        if (Input.GetKeyUp("right")) {
+            anim.SetInteger("State", 0);
+        }
+        if (Input.GetKeyDown("left"))
+        {
+            anim.SetInteger("State", 1);
+        }
+        if (Input.GetKeyUp("left")) {
+            anim.SetInteger("State", 0);
+        }
+        if (Input.GetKey(KeyCode.UpArrow)) {
+            anim.SetBool("Jump Bool", true);
+        }
+
     }
     void FixedUpdate()
     {
@@ -74,12 +95,13 @@ public float jumpForce;
 
         rb2d.AddForce(movement * speed);
 
-        if (Input.GetKey("right")) {
-            transform.eulerAngles = new Vector2(0, 0);
-        }
-        if (Input.GetKey("left"))
+        if (facingRight == false && moveHorizontal > 0)
         {
-            transform.eulerAngles = new Vector2(0, 180);
+            Flip();
+        }
+            else if (facingRight == true && moveHorizontal < 0)
+        {
+            Flip();
         }
 
     }
@@ -120,6 +142,7 @@ public float jumpForce;
             {
                 rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
+            anim.SetBool("Jump Bool", false);
         }
     }
 
@@ -139,5 +162,12 @@ public float jumpForce;
     void SetLivesText ()
     {
         livesText.text = "Lives: " + lives.ToString ();
+    }
+    void Flip ()
+    {
+        facingRight = !facingRight;
+        Vector2 Scaler = transform.localScale;
+        Scaler.x = Scaler.x * -1;
+        transform.localScale = Scaler;
     }
 }
