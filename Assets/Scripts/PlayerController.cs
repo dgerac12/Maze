@@ -115,7 +115,7 @@ private bool facingRight = true;
         if (score == 4)
             {
                 transform.position = new Vector3(16f, -2.2f, 0f);
-                camera.transform.position = new Vector3(23.75f, 0f, -10f);
+                camera.transform.position = new Vector3(23.75f, 0.6f, -10f);
                 livesText.color = Color.white;
                 lives = 3;
                 SetLivesText();
