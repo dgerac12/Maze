@@ -11,7 +11,11 @@ public class PickupMove : MonoBehaviour
      
 
      void Update() {
-
+         
+        if(Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
          transform.position = Vector3.Lerp(pointA, pointB, Mathf.PingPong(Time.time * speed, 1));
      } 
 }

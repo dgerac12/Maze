@@ -55,10 +55,6 @@ private bool facingRight = true;
 
     void Update()
     {
-        if(Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
         if (lives <= 1)
         {
             livesText.color = new Color(168f/255f, 23f/255f, 23f/255f);
